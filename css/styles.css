@@ -107,3 +107,80 @@ body {
 .header__button-logo {
   height: 2.5rem;
 }
+
+/* main */
+.notes {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.notes__heading {
+  font-size: 3.5rem;
+}
+
+@media (min-width: 468px) {
+  .notes__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .notes__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.note {
+  background-color: var(--main-color);
+  border-radius: 1.8rem;
+  padding: 1.5rem 3rem;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease-in;
+}
+
+.note:hover {
+  transform: scale(1.02);
+}
+
+@media (min-width: 468px) {
+  .note {
+    margin-bottom: 0;
+  }
+}
+
+.note__text {
+  font-weight: 600;
+}
+
+.note__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note__date {
+  color: var(--gray);
+  font-size: 1.8rem;
+}
+
+.note__btn-delete {
+  background-color: var(--black);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border-style: hidden;
+}
+
+.note__btn-delete:hover {
+  cursor: pointer;
+}
+
+.note__btn-delete-logo {
+  height: 3rem;
+  color: var(--white);
+}

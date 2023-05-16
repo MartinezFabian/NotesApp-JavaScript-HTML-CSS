@@ -1,0 +1,36 @@
+/* variables */
+:root {
+  --main-font: "Montserrat", sans-serif;
+  --main-color: #fe9c75;
+  --black: #000;
+  --gray: #604823;
+}
+
+/* global styles */
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+[class$="__heading"] {
+  margin: 2rem 0;
+}
+
+[class$="__container"] {
+  max-width: 120rem;
+  width: 90%; /* cuando el ancho sea menos de 1200px va a ocupar el 90% */
+  margin: 0 auto; /* centra el contenedor */
+}

@@ -171,6 +171,9 @@ body {
   height: 5rem;
   border-radius: 50%;
   border-style: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .note__btn-delete:hover {

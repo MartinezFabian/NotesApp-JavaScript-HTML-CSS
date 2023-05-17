@@ -11,6 +11,20 @@ function main() {
 
   //Funciones
 
+  //traemos los datos guardados en local storage
+  getDataLocalStorage();
+
+  function getDataLocalStorage() {
+    // Verificar si hay datos almacenados en el local storage con la clave "notes"
+    if (localStorage.getItem("notes")) {
+      // Obtener los datos almacenados y convertirlos de nuevo a un array
+      notesArray = JSON.parse(localStorage.getItem("notes"));
+
+      // actualizar el contenido HTML con los datos obtenidos
+      updateNotesHTML();
+    }
+  }
+
   registerEventListeners();
 
   function registerEventListeners() {
@@ -72,10 +86,10 @@ function main() {
   }
 
   function updateNotesHTML() {
-    if (notesArray.length > 0) {
-      //Limpiar el HTML
-      clearHTML();
+    //Limpiar el HTML
+    clearHTML();
 
+    if (notesArray.length > 0) {
       //Crear una nota en el HTML por cada elemento de notesArray
       notesArray.forEach((note) => {
         let { id, text, date } = note;
@@ -109,6 +123,9 @@ function main() {
         );
       });
     }
+
+    //Agrega las notas actuales a local storage
+    syncLocalStorage();
   }
 
   // eliminar todo el contenido HTML de notesContainer
@@ -118,5 +135,9 @@ function main() {
       // Remover el primer hijo de notesContainer
       notesContainer.removeChild(notesContainer.firstChild);
     }
+  }
+
+  function syncLocalStorage() {
+    localStorage.setItem("notes", JSON.stringify(notesArray));
   }
 }

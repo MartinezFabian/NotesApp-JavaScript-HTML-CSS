@@ -5,6 +5,7 @@
   --black: #212121;
   --gray: #604823;
   --white: #fff;
+  --red: #b50000;
 }
 
 /* global styles */
@@ -183,4 +184,23 @@ body {
 .note__btn-delete-logo {
   height: 3rem;
   color: var(--white);
+}
+
+/* error message  */
+
+.header__error-message {
+  margin-top: 3rem;
+  background-color: var(--red);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--white);
+}
+
+@media (min-width: 468px) {
+  .header__error-message {
+    width: 60rem;
+  }
 }

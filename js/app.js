@@ -29,6 +29,7 @@ function main() {
 
   function registerEventListeners() {
     form.addEventListener("submit", addNote);
+    notesContainer.addEventListener("click", removeNote);
   }
 
   function addNote(e) {
@@ -44,7 +45,7 @@ function main() {
 
     //si el usuario ingreso texto
     let note = {
-      id: Date.now(),
+      id: String(Date.now()),
       text: noteText,
       date: getCurrentDate(),
     };
@@ -56,6 +57,20 @@ function main() {
 
     //Reiniciar el note-textarea
     form.reset();
+  }
+
+  function removeNote(e) {
+    if (
+      e.target.classList.contains("note__btn-delete") ||
+      e.target.classList.contains("note__btn-delete-logo")
+    ) {
+      let noteID = e.target.getAttribute("data-id");
+
+      notesArray = notesArray.filter((note) => note.id !== noteID);
+
+      // actualizar el contenido HTML con los datos obtenidos
+      updateNotesHTML();
+    }
   }
 
   function showErrorMessage(message) {
@@ -101,7 +116,7 @@ function main() {
             <p class="note__text">${text}</p>
             <div class="note__info">
               <p class="note__date">${date}</p>
-              <button id="btn-delete" class="note__btn-delete" type="button">
+              <button id="btn-delete" class="note__btn-delete" data-id=${id} type="button">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -109,6 +124,7 @@ function main() {
                   stroke-width="1.5"
                   stroke="currentColor"
                   class="note__btn-delete-logo"
+                  data-id=${id}
                 >
                   <path
                     stroke-linecap="round"

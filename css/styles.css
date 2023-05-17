@@ -53,7 +53,8 @@ body {
 }
 
 .form {
-  width: 100%;
+  width: 90%;
+  max-width: 100%;
 }
 
 @media (min-width: 468px) {
@@ -76,7 +77,7 @@ body {
 }
 
 .header__buttons {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   gap: 2rem;
 }
@@ -122,14 +123,8 @@ body {
 @media (min-width: 468px) {
   .notes__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, 27rem);
     gap: 4rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .notes__grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -156,6 +151,7 @@ body {
 
 .note__text {
   font-weight: 600;
+  word-wrap: break-word; /* hace que el texto se muestre en varias líneas en lugar de extenderse horizontalmente.*/
 }
 
 .note__info {

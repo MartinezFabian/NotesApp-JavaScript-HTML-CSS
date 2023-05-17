@@ -12,3 +12,5 @@ Technologies Used:
 - CSS: Utilized for styling and enhancing the visual appearance of the application.
 
 By building this project, I will gain hands-on experience working with JavaScript, HTML, and CSS, while also exploring the concept of persisting data locally using LocalStorage. This application serves as a practical demonstration of how to integrate these technologies to create a functional and user-friendly note-taking tool.
+
+Web deployed: https://martinezfabian.github.io/NotesApp-JavaScript-HTML-CSS/
